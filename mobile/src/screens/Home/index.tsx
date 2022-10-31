@@ -19,9 +19,12 @@ export function Home() {
   }
 
   useEffect(() => {
-    fetch('http://172.17.144.1:3333/games')
+    fetch('http://192.168.1.3:3333/games')
       .then((response) => response.json())
-      .then((data) => setGames(data));
+      .then((data) => {
+        console.log(data);
+        setGames(data);
+      });
   }, []);
   return (
     <Background>

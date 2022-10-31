@@ -26,7 +26,7 @@ export function Game() {
   const game = route.params as GameParams;
 
   useEffect(() => {
-    fetch(`http://172.17.144.1:3333/games/${game.id}/ads`)
+    fetch(`http://192.168.1.3:3333/games/${game.id}/ads`)
       .then((response) => response.json())
       .then((data) => setDuos(data));
   }, []);
@@ -61,7 +61,9 @@ export function Game() {
           style={styles.containerList}
           contentContainerStyle={styles.contentList}
           showsHorizontalScrollIndicator={false}
-          renderItem={({ item }) => <DuoCard data={item} />}
+          renderItem={({ item }) => (
+            <DuoCard data={item} onConnect={() => {}} />
+          )}
         />
       </SafeAreaView>
     </Background>

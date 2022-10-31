@@ -12,6 +12,7 @@ export const styles = StyleSheet.create({
   },
   button: {
     width: '100%',
+    justifyContent: 'center',
     height: 36,
     borderRadius: 6,
     backgroundColor: THEME.COLORS.PRIMARY,
