@@ -22,7 +22,7 @@ As principais bibliotecas JS utilizadas nesse projeto são: Prisma para a constr
 - `Expo`
 - `Typescript`
 - `Tailwindcss`
-- `Radix`
+- `Radix-UI`
 
 ## :gear: Como rodar o Projeto:
 
