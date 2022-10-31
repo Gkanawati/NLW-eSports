@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   Image,
   FlatList,
+  Text,
 } from 'react-native';
 import { useRoute } from '@react-navigation/native';
 import { Entypo } from '@expo/vector-icons';
@@ -59,10 +60,17 @@ export function Game() {
           keyExtractor={(item) => item.id}
           horizontal
           style={styles.containerList}
-          contentContainerStyle={styles.contentList}
+          contentContainerStyle={[
+            duos.length > 0 ? styles.contentList : styles.emptyListContent,
+          ]}
           showsHorizontalScrollIndicator={false}
           renderItem={({ item }) => (
             <DuoCard data={item} onConnect={() => {}} />
+          )}
+          ListEmptyComponent={() => (
+            <Text style={styles.emptyListText}>
+              Não há anúncios publicados ainda.
+            </Text>
           )}
         />
       </SafeAreaView>

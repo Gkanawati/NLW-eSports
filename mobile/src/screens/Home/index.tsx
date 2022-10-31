@@ -21,10 +21,7 @@ export function Home() {
   useEffect(() => {
     fetch('http://192.168.1.3:3333/games')
       .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setGames(data);
-      });
+      .then((data) => setGames(data));
   }, []);
   return (
     <Background>
